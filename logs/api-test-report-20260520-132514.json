@@ -1,0 +1,1122 @@
+[
+  {
+    "Method": "GET",
+    "Path": "/actuator/health",
+    "Category": "smoke",
+    "Status": 200,
+    "Expected": true,
+    "Ms": 9110,
+    "Reason": "",
+    "BodySample": "{\"status\":\"UP\"}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/public/auth/login (seed credential)",
+    "Category": "auth-login-seed",
+    "Status": 400,
+    "Expected": false,
+    "Ms": 412,
+    "Reason": "",
+    "BodySample": "{\"success\":false,\"message\":\"username or password không đúng\",\"data\":null}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/user/update/profile",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 6,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/update/profile\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/user/order/complete/{order-code}",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 3,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/order/complete/ORDER-NOT-FOUND\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/user/order/cancel/{order-code}",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/order/cancel/ORDER-NOT-FOUND\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/user/notifications/update/read/{code}",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 3,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/notifications/update/read/NOTI-NOT-FOUND\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/user/notifications/update/read-all",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 3,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/notifications/update/read-all\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/user/notifications/delete/{code}",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 3,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/notifications/delete/NOTI-NOT-FOUND\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/user/notifications/delete/list",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 3,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/notifications/delete/list\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/user/notifications/clear",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 3,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/notifications/clear\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/user/comment/{productCode}",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 6,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/comment/MTS-001\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "DELETE",
+    "Path": "/v1/api/user/comment/{productCode}",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/comment/MTS-001\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/user/cart/update-quantity",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 3,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/cart/update-quantity\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/admin/voucher/update",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 4,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/voucher/update\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/admin/user/update",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/user/update\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/admin/provider/update/{code}",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 1,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/provider/update/NIKE\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/admin/promotions/update",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/promotions/update\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/admin/product/update",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/product/update\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/admin/order/update/status",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/order/update/status\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/admin/order/update/shipping/{code}",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/order/update/shipping/MTS-001\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/admin/order/update/delivered/{code}",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/order/update/delivered/MTS-001\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/admin/order/update/confirm/{code}",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/order/update/confirm/MTS-001\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/admin/notification/update/read/{code}",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/notification/update/read/NOTI-NOT-FOUND\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/admin/notification/update/read-all",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/notification/update/read-all\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/admin/notification/delete/{code}",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 3,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/notification/delete/NOTI-NOT-FOUND\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/admin/notification/delete/list",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/notification/delete/list\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PUT",
+    "Path": "/v1/api/admin/notification/clear",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/notification/clear\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/vqr/bank/api/transaction-sync",
+    "Category": "public-write",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 6,
+    "Reason": "",
+    "BodySample": "{\"error\":true,\"errorReason\":\"INVALID_TOKEN\",\"toastMessage\":\"Invalid or expired token\",\"object\":null}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/vqr/api/token_generate",
+    "Category": "public-write",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 5,
+    "Reason": "",
+    "BodySample": "{\"status\":\"FAILED\",\"message\":\"INVALID_CREDENTIALS\"}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/user/receiver/create",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/receiver/create\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/user/payment/vnpay/{order-code}",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 3,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/payment/vnpay/ORDER-NOT-FOUND\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/user/order/create",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/order/create\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/user/notifications/create",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/notifications/create\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/user/comment",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/comment\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/user/cart/add",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/cart/add\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/public/auth/regis",
+    "Category": "public-write",
+    "Status": 400,
+    "Expected": true,
+    "Ms": 21,
+    "Reason": "",
+    "BodySample": "{\"success\":false,\"message\":\"Validation failed\",\"data\":{\"password\":\"size must be between 8 and 50\",\"email\":\"must be a well-formed email address\",\"username\":\"size must be between 3 and 50\"}}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/public/auth/regis/verify",
+    "Category": "public-write",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 1080,
+    "Reason": "",
+    "BodySample": "{\"success\":false,\"message\":\"Otp đã hết hạn\",\"data\":null}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/public/auth/refresh",
+    "Category": "public-write",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 5,
+    "Reason": "",
+    "BodySample": "{\"success\":false,\"message\":\"Missing refresh_token cookie\",\"data\":null}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/public/auth/logout",
+    "Category": "public-write",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 5,
+    "Reason": "",
+    "BodySample": "{\"success\":false,\"message\":\"Missing refresh_token cookie\",\"data\":null}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/public/auth/login",
+    "Category": "public-write",
+    "Status": 400,
+    "Expected": true,
+    "Ms": 380,
+    "Reason": "",
+    "BodySample": "{\"success\":false,\"message\":\"username or password không đúng\",\"data\":null}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/public/auth/forgot-password",
+    "Category": "public-write",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 308,
+    "Reason": "",
+    "BodySample": "{\"success\":false,\"message\":\"token không hợp lệ\",\"data\":null}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/admin/voucher/create",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/voucher/create\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/admin/provider/add-new",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/provider/add-new\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/admin/promotions/add-new",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 1,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/promotions/add-new\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/admin/product/add-new",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/product/add-new\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/admin/product/add-items",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/product/add-items\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/admin/notification/create/create",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/notification/create/create\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/admin/category/category/add-new",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/category/category/add-new\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/admin/auth/create-admin",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/auth/create-admin\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/account/update/password",
+    "Category": "account-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/account/update/password\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/account/update/email/verify-otp",
+    "Category": "account-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 3,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/account/update/email/verify-otp\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/account/update/email/send-otp",
+    "Category": "account-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/account/update/email/send-otp\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "POST",
+    "Path": "/v1/api/account/check/password",
+    "Category": "account-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/account/check/password\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "PATCH",
+    "Path": "/v1/api/admin/promotions/{id}/delete",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/promotions/1/delete\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/user/vouchers",
+    "Category": "user-get",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/vouchers\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/user/receiver/get",
+    "Category": "user-get",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/receiver/get\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/user/receiver/get/all",
+    "Category": "user-get",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/receiver/get/all\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/user/order/{orderCode}",
+    "Category": "user-get",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/order/ORDER-NOT-FOUND\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/user/order/my-orders",
+    "Category": "user-get",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 1,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/order/my-orders\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/user/order/my-orders/status",
+    "Category": "user-get",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/order/my-orders/status\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/user/notifications/get",
+    "Category": "user-get",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 1,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/notifications/get\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/user/notifications/get/unread-count",
+    "Category": "user-get",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/notifications/get/unread-count\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/user/get/me",
+    "Category": "user-get",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/get/me\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/user/comment/mine",
+    "Category": "user-get",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 1,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/comment/mine\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/user/comment/mine/by-product",
+    "Category": "user-get",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/comment/mine/by-product\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/user/cart",
+    "Category": "user-get",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/cart\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/public/provider/gets",
+    "Category": "public-get",
+    "Status": 200,
+    "Expected": true,
+    "Ms": 292,
+    "Reason": "",
+    "BodySample": "{\"success\":true,\"message\":\"provider\",\"data\":[{\"name\":\"Nike\",\"code\":\"NIKE\",\"email\":\"contact@nike.com\",\"phone\":\"0901000001\",\"description\":\"Thương hiệu thể thao hàng đầu thế giới\",\"img\":\"https://logo.clearbit.com/nike.com\"},{\"name\":\"Adidas\",\"code\":\"ADID"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/public/provider/get-by-name/{name}",
+    "Category": "public-get",
+    "Status": 200,
+    "Expected": true,
+    "Ms": 148,
+    "Reason": "",
+    "BodySample": "{\"success\":true,\"message\":\"provider\",\"data\":{\"name\":\"Nike\",\"code\":\"NIKE\",\"email\":\"contact@nike.com\",\"phone\":\"0901000001\",\"description\":\"Thương hiệu thể thao hàng đầu thế giới\",\"img\":\"https://logo.clearbit.com/nike.com\"}}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/public/provider/get-by-code/{code}",
+    "Category": "public-get",
+    "Status": 200,
+    "Expected": true,
+    "Ms": 147,
+    "Reason": "",
+    "BodySample": "{\"success\":true,\"message\":\"provider\",\"data\":{\"name\":\"Nike\",\"code\":\"NIKE\",\"email\":\"contact@nike.com\",\"phone\":\"0901000001\",\"description\":\"Thương hiệu thể thao hàng đầu thế giới\",\"img\":\"https://logo.clearbit.com/nike.com\"}}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/public/product/search",
+    "Category": "public-get",
+    "Status": 200,
+    "Expected": true,
+    "Ms": 1468,
+    "Reason": "",
+    "BodySample": "{\"success\":true,\"message\":\"search results\",\"data\":{\"items\":[{\"code\":\"SDL-002\",\"name\":\"Sandal Adilette\",\"price\":690000.00,\"originalPrice\":690000.00,\"rated\":4.4,\"imgUrl\":\"https://images.unsplash.com/photo-1603487742131-4160ec999306?w=400&h=400&fit=crop"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/public/product/item/{productCode}/size/{size}",
+    "Category": "public-get",
+    "Status": 200,
+    "Expected": true,
+    "Ms": 306,
+    "Reason": "",
+    "BodySample": "{\"success\":true,\"message\":\"item\",\"data\":{\"code\":\"MTS-001\",\"name\":\"Áo thun nam cổ tròn basic\",\"price\":299000.00,\"rated\":4.8,\"imgUrl\":\"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop\",\"size\":\"S\"}}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/public/product/get-by-code",
+    "Category": "public-get",
+    "Status": 404,
+    "Expected": true,
+    "Ms": 147,
+    "Reason": "",
+    "BodySample": "{\"success\":false,\"message\":\"product not found\",\"data\":null}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/public/product/get-all",
+    "Category": "public-get",
+    "Status": 200,
+    "Expected": true,
+    "Ms": 2143,
+    "Reason": "",
+    "BodySample": "{\"success\":true,\"message\":\"list product\",\"data\":{\"items\":[{\"code\":\"TEST\",\"name\":\"t\",\"price\":5000.00,\"originalPrice\":5000.00,\"rated\":null,\"imgUrl\":null,\"categoryCode\":\"MEN\"},{\"code\":\"BAG-001\",\"name\":\"Balo thời trang nam\",\"price\":890000.00,\"originalPri"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/public/product/filter",
+    "Category": "public-get",
+    "Status": 200,
+    "Expected": true,
+    "Ms": 2139,
+    "Reason": "",
+    "BodySample": "{\"success\":true,\"message\":\"filtered products\",\"data\":{\"items\":[{\"code\":\"TEST\",\"name\":\"t\",\"price\":5000.00,\"originalPrice\":5000.00,\"rated\":null,\"imgUrl\":null,\"categoryCode\":\"MEN\"},{\"code\":\"BAG-001\",\"name\":\"Balo thời trang nam\",\"price\":890000.00,\"origin"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/public/product/comments",
+    "Category": "public-get",
+    "Status": 200,
+    "Expected": true,
+    "Ms": 584,
+    "Reason": "",
+    "BodySample": "{\"success\":true,\"message\":\"comments\",\"data\":{\"items\":[{\"productCode\":\"MTS-001\",\"content\":\"Vải cotton mềm mại, mặc rất thoáng. Mua lần 3 rồi, chất lượng ổn định.\",\"rating\":5.0,\"createdAt\":\"2026-04-23T15:02:49.656479Z\"},{\"productCode\":\"MTS-001\",\"conten"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/public/product/best-seller",
+    "Category": "public-get",
+    "Status": 200,
+    "Expected": true,
+    "Ms": 2136,
+    "Reason": "",
+    "BodySample": "{\"success\":true,\"message\":\"best seller products\",\"data\":{\"items\":[{\"code\":\"HAT-001\",\"name\":\"Nón lưỡi trai logo\",\"price\":450000.00,\"originalPrice\":450000.00,\"rated\":4.6,\"imgUrl\":\"https://images.unsplash.com/photo-1588850561407-ed78c334e67a?w=400&h=400"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/public/payment/vnpay/return",
+    "Category": "public-get",
+    "Status": 200,
+    "Expected": true,
+    "Ms": 3,
+    "Reason": "",
+    "BodySample": "{\"success\":false,\"message\":\"Thanh toán thất bại\",\"data\":{\"orderCode\":\"\",\"paid\":false}}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/public/category/get/{code}",
+    "Category": "public-get",
+    "Status": 200,
+    "Expected": true,
+    "Ms": 148,
+    "Reason": "",
+    "BodySample": "{\"success\":true,\"message\":\"category\",\"data\":{\"name\":\"Thời trang nam\",\"categoryCode\":\"MEN\",\"status\":\"ACTIVE\",\"description\":\"Quần áo nam\",\"imgUrl\":\"https://images.unsplash.com/photo-1552642986-ccb41e7059e7?w=200&h=200&fit=crop\"}}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/public/category/get-children/{code}",
+    "Category": "public-get",
+    "Status": 200,
+    "Expected": true,
+    "Ms": 147,
+    "Reason": "",
+    "BodySample": "{\"success\":true,\"message\":\"list category\",\"data\":[{\"name\":\"Áo thun nam\",\"categoryCode\":\"MTS\",\"status\":\"ACTIVE\",\"description\":\"Áo thun nam các loại\",\"imgUrl\":\"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=200&h=200&fit=crop\"},{\"name\":"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/public/category/get-all",
+    "Category": "public-get",
+    "Status": 200,
+    "Expected": true,
+    "Ms": 290,
+    "Reason": "",
+    "BodySample": "{\"success\":true,\"message\":\"list category\",\"data\":[{\"name\":\"Thời trang nam\",\"categoryCode\":\"MEN\",\"status\":\"ACTIVE\",\"description\":\"Quần áo nam\",\"imgUrl\":\"https://images.unsplash.com/photo-1552642986-ccb41e7059e7?w=200&h=200&fit=crop\"},{\"name\":\"Thời tra"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/promotions/{id}",
+    "Category": "public-get",
+    "Status": 404,
+    "Expected": true,
+    "Ms": 291,
+    "Reason": "",
+    "BodySample": ""
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/promotions/product/{productCode}",
+    "Category": "public-get",
+    "Status": 200,
+    "Expected": true,
+    "Ms": 287,
+    "Reason": "",
+    "BodySample": "{\"success\":true,\"message\":\"Promotions for product\",\"data\":[]}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/promotions/category/{categoryCode}",
+    "Category": "public-get",
+    "Status": 200,
+    "Expected": true,
+    "Ms": 288,
+    "Reason": "",
+    "BodySample": "{\"success\":true,\"message\":\"Promotions for category\",\"data\":[]}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/admin/user/get-by-name",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 7,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/user/get-by-name\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/admin/user/get-by-id",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 4,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/user/get-by-id\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/admin/user/get-all",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 1,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/user/get-all\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/admin/user-vouchers/get-by-name",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/user-vouchers/get-by-name\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/admin/user-vouchers/get-by-id",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/user-vouchers/get-by-id\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/admin/receiver",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/receiver\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "DELETE",
+    "Path": "/v1/api/admin/receiver",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 3,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/receiver\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/admin/receiver/get-all",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 3,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/receiver/get-all\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/admin/receiver/by-user",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 21,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/receiver/by-user\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "DELETE",
+    "Path": "/v1/api/admin/receiver/by-user",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/receiver/by-user\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/admin/promotions/get-all",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 4,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/promotions/get-all\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/admin/product/items",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/product/items\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/admin/order/get/{orderCode}",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 3,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/order/get/ORDER-NOT-FOUND\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/admin/order/get/by-status",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 3,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/order/get/by-status\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/admin/order/get/all",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/order/get/all\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/admin/notification/get",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/notification/get\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/admin/notification/get/unread-count",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 1,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/notification/get/unread-count\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/account/check/exists-username",
+    "Category": "public-get",
+    "Status": 200,
+    "Expected": true,
+    "Ms": 147,
+    "Reason": "",
+    "BodySample": "{\"success\":true,\"message\":\"check username\",\"data\":null}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/v1/api/account/check/exists-email",
+    "Category": "public-get",
+    "Status": 200,
+    "Expected": true,
+    "Ms": 144,
+    "Reason": "",
+    "BodySample": "{\"success\":true,\"message\":\"check email\",\"data\":null}"
+  },
+  {
+    "Method": "GET",
+    "Path": "/favicon.ico",
+    "Category": "public-get",
+    "Status": 204,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": ""
+  },
+  {
+    "Method": "GET",
+    "Path": "/",
+    "Category": "public-get",
+    "Status": 200,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "Hello World"
+  },
+  {
+    "Method": "DELETE",
+    "Path": "/v1/api/user/receiver/remove",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 1,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/receiver/remove\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "DELETE",
+    "Path": "/v1/api/user/receiver/remove/all",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/receiver/remove/all\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "DELETE",
+    "Path": "/v1/api/user/cart/removes",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 1,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/cart/removes\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "DELETE",
+    "Path": "/v1/api/user/cart/remove/{product-code}/{size}",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 1,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/cart/remove/MTS-001/S\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "DELETE",
+    "Path": "/v1/api/user/cart/clear",
+    "Category": "user-mutation-no-token",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 1,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/user/cart/clear\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "DELETE",
+    "Path": "/v1/api/admin/provider/delete/{code}",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 1,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/provider/delete/NIKE\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "DELETE",
+    "Path": "/v1/api/admin/product/delete/{code}",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/product/delete/MTS-001\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  },
+  {
+    "Method": "DELETE",
+    "Path": "/v1/api/admin/category/category/{code}",
+    "Category": "admin-protected",
+    "Status": 401,
+    "Expected": true,
+    "Ms": 2,
+    "Reason": "",
+    "BodySample": "{\"message\":\"Chưa đăng nhập hoặc token không hợp lệ\",\"path\":\"/v1/api/admin/category/category/MEN\",\"success\":false,\"detail\":\"Full authentication is required to access this resource\"}"
+  }
+]

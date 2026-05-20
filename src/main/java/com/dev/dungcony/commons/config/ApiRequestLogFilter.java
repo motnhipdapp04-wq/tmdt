@@ -40,7 +40,6 @@ public class ApiRequestLogFilter extends OncePerRequestFilter {
         exact("POST /v1/api/public/auth/regis", "Đăng ký tài khoản");
         exact("POST /v1/api/public/auth/regis/verify", "Xác thực OTP đăng ký");
         exact("POST /v1/api/public/auth/forgot-password", "Quên mật khẩu — gửi mật khẩu mới qua email");
-        exact("POST /v1/api/public/auth/create-admin", "Tạo tài khoản admin");
 
         // ==================== ACCOUNT UPDATE ====================
         exact("POST /v1/api/account/update/email/send-otp", "Gửi OTP đổi email");
@@ -115,6 +114,7 @@ public class ApiRequestLogFilter extends OncePerRequestFilter {
         prefix("GET /v1/api/promotions/", "Lấy chi tiết khuyến mãi");
 
         // ==================== ADMIN — USER ====================
+        exact("POST /v1/api/admin/auth/create-admin", "[ADMIN] Tạo tài khoản admin");
         exact("GET /v1/api/admin/user/get-all", "[ADMIN] Lấy tất cả user");
         exact("GET /v1/api/admin/user", "[ADMIN] Lấy user theo id/tên");
         exact("PUT /v1/api/admin/user/update", "[ADMIN] Cập nhật user");

@@ -1,3 +1,3 @@
-#!/bin/bash
-# Chạy nhanh nhất - skip tests và compile tối thiểu
-mvn spring-boot:run -DskipTests -Dmaven.test.skip=true
+@echo off
+REM Quick local run: skip tests and test compilation.
+call "%~dp0mvnw.cmd" spring-boot:run -DskipTests -Dmaven.test.skip=true

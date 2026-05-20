@@ -24,8 +24,8 @@ public class ItemController {
 
     private final ItemGetService service;
 
-    @Operation(summary = "lấy thông tin item theo product code và size id")
-    @GetMapping("/item/{productCode}/size/{sizeId}")
+    @Operation(summary = "lấy thông tin item theo product code và size")
+    @GetMapping("/item/{productCode}/size/{size}")
     public ResponseEntity<ApiRes<?>> getItems(
             @PathVariable String productCode,
             @PathVariable ProductSize size) {

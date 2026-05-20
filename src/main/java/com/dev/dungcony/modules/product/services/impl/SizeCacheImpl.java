@@ -13,7 +13,9 @@ import com.dev.dungcony.modules.product.repositories.SizeRepository;
 import com.dev.dungcony.modules.product.services.interfaces.SizeCacheService;
 
 import jakarta.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 public class SizeCacheImpl implements SizeCacheService {
 
@@ -36,7 +38,7 @@ public class SizeCacheImpl implements SizeCacheService {
         sizeById = sizes.stream()
                 .collect(Collectors.toMap(Size::getId, s -> s));
 
-        System.out.println("Loaded " + sizes.size() + " sizes into cache");
+        log.info("Loaded {} sizes into cache", sizes.size());
     }
 
     @Override

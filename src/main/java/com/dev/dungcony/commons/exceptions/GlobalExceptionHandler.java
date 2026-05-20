@@ -16,6 +16,8 @@ import org.springframework.web.bind.MissingRequestCookieException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.servlet.NoHandlerFoundException;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -57,7 +59,7 @@ public class GlobalExceptionHandler {
 
         ex.getBindingResult().getFieldErrors()
                 .forEach(err -> errors.put(err.getField(), err.getDefaultMessage()));
-        log.error(ex.getMessage(), ex);
+        log.warn("Validation failed for {} {}: {}", request.getMethod(), request.getRequestURI(), errors);
         captureApiError(request, HttpStatus.BAD_REQUEST, ex, "Validation failed");
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
@@ -137,6 +139,14 @@ public class GlobalExceptionHandler {
         return ResponseEntity
                 .status(HttpStatus.CONFLICT)
                 .body(ApiRes.error("was updated by another user, please reload"));
+    }
+
+    @ExceptionHandler({NoHandlerFoundException.class, NoResourceFoundException.class})
+    public ResponseEntity<ApiRes<Void>> handleNotFound(Exception ex, HttpServletRequest request) {
+        captureApiError(request, HttpStatus.NOT_FOUND, ex, "API không tồn tại");
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(ApiRes.error("API không tồn tại"));
     }
 
     @ExceptionHandler(Exception.class)
