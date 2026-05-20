@@ -23,6 +23,9 @@ public interface OrderUpdateService {
     // xác nhận đơn hàng đã được giao
     void deliveredOrder(String orderCode);
 
+    //admin cập nhật trạng thái đơn hàng thành đã hoàn
+    void adminReturnOrder(String orderCode);
+
     //admin cập nhật trạng thái đơn hàng
     void adminUpdateOrderStatus(String orderCode, OrderStatus nextStatus);
 }

@@ -153,6 +153,7 @@ public class ApiRequestLogFilter extends OncePerRequestFilter {
         exact("GET /v1/api/admin/order/get-all", "[ADMIN] Lấy tất cả đơn hàng");
         exact("GET /v1/api/admin/order/get-by-status", "[ADMIN] Lấy đơn hàng theo trạng thái");
         exact("PATCH /v1/api/admin/order/update-status", "[ADMIN] Cập nhật trạng thái đơn hàng");
+        prefix("PUT /v1/api/admin/order/update/returned/", "[ADMIN] Cập nhật đơn hàng đã hoàn");
         prefix("GET /v1/api/admin/order/", "[ADMIN] Xem chi tiết đơn hàng");
 
         // ==================== ADMIN — VOUCHER ====================

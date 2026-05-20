@@ -467,6 +467,18 @@ Vô hiệu hóa khuyến mãi (soft delete, không xóa khỏi DB).
 
 ---
 
+## 📦 Module: Orders
+
+### Admin 🔒
+
+#### `PUT /v1/api/admin/order/update/returned/{code}`
+
+Admin đưa đơn hàng về trạng thái `RETURNED`.
+
+**Response 200:** `{ "success": true, "message": "Order returned success", "data": null }`
+
+---
+
 ## 👤 Module: Users 🔒
 
 ### `GET /v1/api/user/me` 🔒
@@ -557,4 +569,3 @@ Xóa địa chỉ theo id.
 1. POST /update/email/send-otp?oldEmail=...   → nhận OTP về email cũ
 2. POST /update/email/verify-otp?newEmail=...&otp=...  → đổi email
 ```
-

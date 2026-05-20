@@ -132,6 +132,20 @@ public class OrderUpdateImpl implements OrderUpdateService {
         log.info("Đơn hàng {} đã giao thành công", orderCode);
     }
 
+    @Transactional
+    @Override
+    public void adminReturnOrder(String orderCode) {
+        Order order = orderRepository.findByCode(orderCode)
+                .orElseThrow(OrderNotFoundException::new);
+
+        if (order.getStatus() == OrderStatus.RETURNED) {
+            return;
+        }
+
+        order.setStatus(OrderStatus.RETURNED);
+        log.info("Quản trị viên cập nhật đơn hàng {} thành đã hoàn", orderCode);
+    }
+
     @Override
     @Transactional
     public void adminUpdateOrderStatus(String orderCode, OrderStatus nextStatus) {

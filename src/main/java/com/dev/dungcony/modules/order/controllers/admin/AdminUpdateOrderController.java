@@ -52,4 +52,12 @@ public class AdminUpdateOrderController {
         return ResponseEntity.ok(ApiRes.success("Order delivered success"));
     }
 
+    @Operation(summary = "hoàn đơn hàng", description = "Admin đưa đơn hàng về trạng thái RETURNED")
+    @PutMapping("/returned/{code}")
+    public ResponseEntity<ApiRes<Void>> returnOrder(
+            @PathVariable String code) {
+        orderUpdateService.adminReturnOrder(code);
+        return ResponseEntity.ok(ApiRes.success("Order returned success"));
+    }
+
 }
