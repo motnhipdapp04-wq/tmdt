@@ -17,5 +17,7 @@ public interface CartUpdateService {
 
     void removeListItem(UUID uid, List<CartItemDto> cartItemDtos);
 
+    void removeListItemAndRestoreStock(UUID uid, List<CartItemDto> cartItemDtos);
+
     void clearCart(UUID userId);
 }

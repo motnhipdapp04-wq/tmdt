@@ -40,6 +40,7 @@ public class ApiRequestLogFilter extends OncePerRequestFilter {
         exact("POST /v1/api/public/auth/regis", "Đăng ký tài khoản");
         exact("POST /v1/api/public/auth/regis/verify", "Xác thực OTP đăng ký");
         exact("POST /v1/api/public/auth/forgot-password", "Quên mật khẩu — gửi mật khẩu mới qua email");
+        exact("POST /v1/api/public/auth/create-admin", "Tạo tài khoản admin test");
 
         // ==================== ACCOUNT UPDATE ====================
         exact("POST /v1/api/account/update/email/send-otp", "Gửi OTP đổi email");
@@ -65,8 +66,9 @@ public class ApiRequestLogFilter extends OncePerRequestFilter {
         // ==================== CART ====================
         exact("GET /v1/api/user/cart", "Lấy giỏ hàng");
         exact("POST /v1/api/user/cart/add", "Thêm sản phẩm vào giỏ hàng");
-        exact("PATCH /v1/api/user/cart/update-quantity", "Cập nhật số lượng trong giỏ");
-        exact("DELETE /v1/api/user/cart/remove", "Xóa sản phẩm khỏi giỏ hàng");
+        exact("PUT /v1/api/user/cart/update-quantity", "Cập nhật số lượng trong giỏ");
+        prefix("DELETE /v1/api/user/cart/remove/", "Xóa sản phẩm khỏi giỏ hàng");
+        exact("DELETE /v1/api/user/cart/removes", "Xóa danh sách sản phẩm khỏi giỏ hàng");
         exact("DELETE /v1/api/user/cart/clear", "Xóa toàn bộ giỏ hàng");
 
         // ==================== ORDER (USER) ====================
@@ -114,7 +116,6 @@ public class ApiRequestLogFilter extends OncePerRequestFilter {
         prefix("GET /v1/api/promotions/", "Lấy chi tiết khuyến mãi");
 
         // ==================== ADMIN — USER ====================
-        exact("POST /v1/api/admin/auth/create-admin", "[ADMIN] Tạo tài khoản admin");
         exact("GET /v1/api/admin/user/get-all", "[ADMIN] Lấy tất cả user");
         exact("GET /v1/api/admin/user", "[ADMIN] Lấy user theo id/tên");
         exact("PUT /v1/api/admin/user/update", "[ADMIN] Cập nhật user");

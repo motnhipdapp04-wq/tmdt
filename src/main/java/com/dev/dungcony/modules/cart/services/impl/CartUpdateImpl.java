@@ -104,14 +104,56 @@ public class CartUpdateImpl implements CartUpdateService {
     }
 
     @Override
+    @Transactional
     public void removeListItem(UUID uid, List<CartItemDto> cartItemDtos) {
+        removeListItem(uid, cartItemDtos, false);
+    }
+
+    @Override
+    @Transactional
+    public void removeListItemAndRestoreStock(UUID uid, List<CartItemDto> cartItemDtos) {
+        removeListItem(uid, cartItemDtos, true);
+    }
+
+    private void removeListItem(UUID uid, List<CartItemDto> cartItemDtos, boolean restoreStock) {
         List<CartItemId> ids = cartItemDtos.stream()
-                .map(id -> new CartItemId(uid, id.productId(), sizeCacheService.getIdBySize(id.productSize())))
+                .map(item -> toCartItemId(uid, item, restoreStock))
+                .distinct()
                 .toList();
 
-        if (ids.size() != cartItemRepository.deleteAllByIdIn(ids))
+        List<CartItem> items = cartItemRepository.findAllById(ids);
+        if (items.size() != ids.size()) {
             throw new CartUnProcessableException();
+        }
 
+        if (restoreStock) {
+            for (CartItem item : items) {
+                itemUpdateService.increase(
+                        item.getId().getProductId(),
+                        item.getId().getSizeId(),
+                        item.getQuantity());
+            }
+        }
+
+        cartItemRepository.deleteAll(items);
+    }
+
+    private CartItemId toCartItemId(UUID uid, CartItemDto item, boolean resolveByProductCode) {
+        if (item == null || item.productSize() == null) {
+            throw new CartUnProcessableException();
+        }
+
+        Integer productId;
+        if (resolveByProductCode || item.productId() == null) {
+            if (item.productCode() == null || item.productCode().isBlank()) {
+                throw new CartUnProcessableException();
+            }
+            productId = productGetService.getIdByCode(item.productCode());
+        } else {
+            productId = item.productId();
+        }
+
+        return new CartItemId(uid, productId, sizeCacheService.getIdBySize(item.productSize()));
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.dev.dungcony.modules.cart.controllers.user;
 import com.dev.dungcony.modules.cart.dtos.req.RemoveListItemReq;
 import com.dev.dungcony.modules.cart.services.interfaces.CartUpdateService;
 import com.dev.dungcony.modules.product.enums.ProductSize;
+import io.swagger.v3.oas.annotations.Parameter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
@@ -49,7 +50,8 @@ public class CartUpdateController {
     @DeleteMapping("/remove/{product-code}/{size}")
     public ResponseEntity<ApiRes<Void>> removeItem(
             @AuthenticationPrincipal AccountDetails account,
-            @PathVariable String productCode,
+            @Parameter(name = "product-code", description = "Mã sản phẩm", required = true)
+            @PathVariable("product-code") String productCode,
             @PathVariable ProductSize size) {
         cartUpdateService.removeItemFromCart(account.requireUserUuid(), productCode, size);
         return ResponseEntity.ok(ApiRes.success("Item removed from cart"));
@@ -61,7 +63,7 @@ public class CartUpdateController {
             @AuthenticationPrincipal AccountDetails account,
             @Valid @RequestBody RemoveListItemReq listItemReq) {
 
-        cartUpdateService.removeListItem(account.requireUserUuid(), listItemReq.listRemove());
+        cartUpdateService.removeListItemAndRestoreStock(account.requireUserUuid(), listItemReq.listRemove());
 
         return ResponseEntity.ok(ApiRes.success("Items removed from cart"));
     }

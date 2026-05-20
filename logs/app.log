@@ -13590,3 +13590,232 @@ java.net.SocketException: Connection reset
 2026-05-20T13:50:01.226+07:00  INFO 16812 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
 2026-05-20T13:50:20.562+07:00  INFO 16812 --- [dungcony] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
 2026-05-20T13:50:20.563+07:00  INFO 16812 --- [dungcony] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2026-05-20T13:51:40.680+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : Starting DungconyApplication using Java 21.0.9 with PID 3544 (D:\private\hi\target\classes started by dung0 in D:\private\hi)
+2026-05-20T13:51:40.681+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : The following 1 profile is active: "dev"
+2026-05-20T13:51:43.373+07:00  INFO 3544 --- [dungcony] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-20T13:51:43.373+07:00  INFO 3544 --- [dungcony] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-05-20T13:51:43.412+07:00  INFO 3544 --- [dungcony] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-20T13:51:43.976+07:00  INFO 3544 --- [dungcony] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-20T13:51:45.645+07:00  INFO 3544 --- [dungcony] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-20T13:52:01.194+07:00  INFO 3544 --- [dungcony] [restartedMain] c.d.d.m.p.services.impl.SizeCacheImpl    : Loaded 6 sizes into cache
+2026-05-20T13:52:01.802+07:00  INFO 3544 --- [dungcony] [restartedMain] c.d.d.m.payment.services.impl.VnPayImpl  : VNPay resolved payUrl=https://sandbox.vnpayment.vn/paymentv2/vpcpay.html, returnUrl=http://localhost:8080/v1/api/public/payment/vnpay/return
+2026-05-20T13:52:02.874+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : Started DungconyApplication in 22.542 seconds (process running for 22.858)
+2026-05-20T13:53:01.607+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T13:53:01.761+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T13:54:02.025+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T13:54:02.176+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T13:54:31.981+07:00  INFO 3544 --- [dungcony] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-20T13:54:32.130+07:00  INFO 3544 --- [dungcony] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-20T13:54:32.232+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : Starting DungconyApplication using Java 21.0.9 with PID 3544 (D:\private\hi\target\classes started by dung0 in D:\private\hi)
+2026-05-20T13:54:32.233+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : The following 1 profile is active: "dev"
+2026-05-20T13:54:32.921+07:00  INFO 3544 --- [dungcony] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-20T13:54:32.922+07:00  INFO 3544 --- [dungcony] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-05-20T13:54:32.936+07:00  INFO 3544 --- [dungcony] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-20T13:54:33.089+07:00  INFO 3544 --- [dungcony] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-05-20T13:54:34.633+07:00  INFO 3544 --- [dungcony] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-05-20T13:54:45.164+07:00  INFO 3544 --- [dungcony] [restartedMain] c.d.d.m.p.services.impl.SizeCacheImpl    : Loaded 6 sizes into cache
+2026-05-20T13:54:45.367+07:00  INFO 3544 --- [dungcony] [restartedMain] c.d.d.m.payment.services.impl.VnPayImpl  : VNPay resolved payUrl=https://sandbox.vnpayment.vn/paymentv2/vpcpay.html, returnUrl=http://localhost:8080/v1/api/public/payment/vnpay/return
+2026-05-20T13:54:45.922+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : Started DungconyApplication in 13.727 seconds (process running for 185.908)
+2026-05-20T13:55:01.039+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T13:55:01.189+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T13:55:01.744+07:00  INFO 3544 --- [dungcony] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-05-20T13:55:01.886+07:00  INFO 3544 --- [dungcony] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-05-20T13:55:02.036+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : Starting DungconyApplication using Java 21.0.9 with PID 3544 (D:\private\hi\target\classes started by dung0 in D:\private\hi)
+2026-05-20T13:55:02.037+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : The following 1 profile is active: "dev"
+2026-05-20T13:55:02.481+07:00  INFO 3544 --- [dungcony] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-20T13:55:02.481+07:00  INFO 3544 --- [dungcony] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-05-20T13:55:02.502+07:00  INFO 3544 --- [dungcony] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-20T13:55:02.580+07:00  INFO 3544 --- [dungcony] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-05-20T13:55:03.984+07:00  INFO 3544 --- [dungcony] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-05-20T13:55:06.591+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : Started DungconyApplication in 4.623 seconds (process running for 206.576)
+2026-05-20T13:55:08.041+07:00  INFO 3544 --- [dungcony] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2026-05-20T13:55:08.189+07:00  INFO 3544 --- [dungcony] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2026-05-20T13:55:08.276+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : Starting DungconyApplication using Java 21.0.9 with PID 3544 (D:\private\hi\target\classes started by dung0 in D:\private\hi)
+2026-05-20T13:55:08.276+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : The following 1 profile is active: "dev"
+2026-05-20T13:55:08.862+07:00  INFO 3544 --- [dungcony] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-20T13:55:08.863+07:00  INFO 3544 --- [dungcony] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-05-20T13:55:08.877+07:00  INFO 3544 --- [dungcony] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-20T13:55:09.008+07:00  INFO 3544 --- [dungcony] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2026-05-20T13:55:10.519+07:00  INFO 3544 --- [dungcony] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2026-05-20T13:55:20.484+07:00  INFO 3544 --- [dungcony] [restartedMain] c.d.d.m.p.services.impl.SizeCacheImpl    : Loaded 6 sizes into cache
+2026-05-20T13:55:20.635+07:00  INFO 3544 --- [dungcony] [restartedMain] c.d.d.m.payment.services.impl.VnPayImpl  : VNPay resolved payUrl=https://sandbox.vnpayment.vn/paymentv2/vpcpay.html, returnUrl=http://localhost:8080/v1/api/public/payment/vnpay/return
+2026-05-20T13:55:21.094+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : Started DungconyApplication in 12.843 seconds (process running for 221.079)
+2026-05-20T13:55:44.056+07:00  INFO 3544 --- [dungcony] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-20T13:55:44.122+07:00  INFO 3544 --- [dungcony] [http-nio-0.0.0.0-8080-exec-4] c.d.d.c.config.ApiRequestLogFilter       : >>> POST /v1/api/public/auth/create-admin — Tạo tài khoản admin test
+2026-05-20T13:55:44.153+07:00  INFO 3544 --- [dungcony] [http-nio-0.0.0.0-8080-exec-7] c.d.d.c.config.ApiRequestLogFilter       : >>> DELETE /v1/api/user/cart/removes — Xóa danh sách sản phẩm khỏi giỏ hàng
+2026-05-20T13:55:44.157+07:00  WARN 3544 --- [dungcony] [http-nio-0.0.0.0-8080-exec-7] c.d.d.m.auth.config.SecurityConfig       : 401 Unauthorized - path: /v1/api/user/cart/removes, reason: Full authentication is required to access this resource
+2026-05-20T13:55:44.172+07:00  WARN 3544 --- [dungcony] [http-nio-0.0.0.0-8080-exec-7] c.d.d.c.config.ApiRequestLogFilter       : <<< DELETE /v1/api/user/cart/removes — Xóa danh sách sản phẩm khỏi giỏ hàng — HTTP 401 (19ms)
+2026-05-20T13:55:44.189+07:00  WARN 3544 --- [dungcony] [http-nio-0.0.0.0-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('\' (code 92)): was expecting double-quote to start field name]
+2026-05-20T13:55:44.190+07:00  WARN 3544 --- [dungcony] [http-nio-0.0.0.0-8080-exec-4] c.d.d.c.config.ApiRequestLogFilter       : <<< POST /v1/api/public/auth/create-admin — Tạo tài khoản admin test — HTTP 400 (67ms)
+2026-05-20T13:55:45.127+07:00  INFO 3544 --- [dungcony] [http-nio-0.0.0.0-8080-exec-2] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1016 ms
+2026-05-20T13:56:00.995+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T13:56:01.137+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T13:56:12.091+07:00  INFO 3544 --- [dungcony] [http-nio-0.0.0.0-8080-exec-9] c.d.d.c.config.ApiRequestLogFilter       : >>> POST /v1/api/public/auth/create-admin — Tạo tài khoản admin test
+2026-05-20T13:56:12.127+07:00  WARN 3544 --- [dungcony] [http-nio-0.0.0.0-8080-exec-9] c.d.d.c.e.GlobalExceptionHandler         : Validation failed for POST /v1/api/public/auth/create-admin: {password=password not blank, username=username not blank}
+2026-05-20T13:56:12.131+07:00  WARN 3544 --- [dungcony] [http-nio-0.0.0.0-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.dev.dungcony.commons.dtos.ApiRes<?>> com.dev.dungcony.modules.auth.controllers.admin.AccoutController.cAdmin(com.dev.dungcony.modules.auth.dtos.req.LoginReq) with 2 errors: [Field error in object 'loginReq' on field 'username': rejected value []; codes [NotBlank.loginReq.username,NotBlank.username,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [loginReq.username,username]; arguments []; default message [username]]; default message [username not blank]] [Field error in object 'loginReq' on field 'password': rejected value []; codes [NotBlank.loginReq.password,NotBlank.password,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [loginReq.password,password]; arguments []; default message [password]]; default message [password not blank]] ]
+2026-05-20T13:56:12.133+07:00  WARN 3544 --- [dungcony] [http-nio-0.0.0.0-8080-exec-9] c.d.d.c.config.ApiRequestLogFilter       : <<< POST /v1/api/public/auth/create-admin — Tạo tài khoản admin test — HTTP 400 (41ms)
+2026-05-20T13:56:55.261+07:00  INFO 3544 --- [dungcony] [lettuce-nioEventLoop-10-1] i.lettuce.core.protocol.CommandHandler   : null Unexpected exception during request: java.net.SocketException: Connection reset
+
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434) ~[na:na]
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:255) ~[netty-buffer-4.1.131.Final.jar:4.1.131.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132) ~[netty-buffer-4.1.131.Final.jar:4.1.131.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:356) ~[netty-transport-4.1.131.Final.jar:4.1.131.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:156) ~[netty-transport-4.1.131.Final.jar:4.1.131.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:796) ~[netty-transport-4.1.131.Final.jar:4.1.131.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:732) ~[netty-transport-4.1.131.Final.jar:4.1.131.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:658) ~[netty-transport-4.1.131.Final.jar:4.1.131.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) ~[netty-transport-4.1.131.Final.jar:4.1.131.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:998) ~[netty-common-4.1.131.Final.jar:4.1.131.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.131.Final.jar:4.1.131.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.131.Final.jar:4.1.131.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2026-05-20T13:56:55.355+07:00  INFO 3544 --- [dungcony] [lettuce-eventExecutorLoop-8-1] i.l.core.protocol.ConnectionWatchdog     : Reconnecting, last destination was downy-spotted-tealish-59867.db.redis.io/3.91.98.68:11702
+2026-05-20T13:56:56.347+07:00  INFO 3544 --- [dungcony] [lettuce-nioEventLoop-10-2] i.l.core.protocol.ReconnectionHandler    : Reconnected to downy-spotted-tealish-59867.db.redis.io/<unresolved>:11702
+2026-05-20T13:57:02.279+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T13:57:02.430+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T13:58:01.473+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T13:58:01.618+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T13:59:02.178+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T13:59:02.389+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T13:59:38.718+07:00  INFO 3544 --- [dungcony] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2026-05-20T13:59:38.718+07:00  INFO 3544 --- [dungcony] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2026-05-20T13:59:38.823+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : Starting DungconyApplication using Java 21.0.9 with PID 3544 (D:\private\hi\target\classes started by dung0 in D:\private\hi)
+2026-05-20T13:59:38.823+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : The following 1 profile is active: "dev"
+2026-05-20T13:59:39.509+07:00  INFO 3544 --- [dungcony] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-20T13:59:39.509+07:00  INFO 3544 --- [dungcony] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-05-20T13:59:39.523+07:00  INFO 3544 --- [dungcony] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-20T13:59:39.637+07:00  INFO 3544 --- [dungcony] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2026-05-20T13:59:41.153+07:00  INFO 3544 --- [dungcony] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2026-05-20T13:59:53.137+07:00  INFO 3544 --- [dungcony] [restartedMain] c.d.d.m.p.services.impl.SizeCacheImpl    : Loaded 6 sizes into cache
+2026-05-20T13:59:53.282+07:00  INFO 3544 --- [dungcony] [restartedMain] c.d.d.m.payment.services.impl.VnPayImpl  : VNPay resolved payUrl=https://sandbox.vnpayment.vn/paymentv2/vpcpay.html, returnUrl=http://localhost:8080/v1/api/public/payment/vnpay/return
+2026-05-20T13:59:53.750+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : Started DungconyApplication in 14.955 seconds (process running for 493.736)
+2026-05-20T14:00:00.012+07:00  WARN 3544 --- [dungcony] [scheduling-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-5 - Failed to validate connection org.postgresql.jdbc.PgConnection@4ec21c81 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-05-20T14:00:02.001+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T14:00:02.155+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T14:00:20.968+07:00  INFO 3544 --- [dungcony] [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2026-05-20T14:00:20.969+07:00  INFO 3544 --- [dungcony] [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2026-05-20T14:00:21.073+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : Starting DungconyApplication using Java 21.0.9 with PID 3544 (D:\private\hi\target\classes started by dung0 in D:\private\hi)
+2026-05-20T14:00:21.073+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : The following 1 profile is active: "dev"
+2026-05-20T14:00:21.430+07:00  INFO 3544 --- [dungcony] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-20T14:00:21.430+07:00  INFO 3544 --- [dungcony] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-05-20T14:00:21.448+07:00  INFO 3544 --- [dungcony] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-20T14:00:21.537+07:00  INFO 3544 --- [dungcony] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2026-05-20T14:00:23.173+07:00  INFO 3544 --- [dungcony] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2026-05-20T14:00:25.888+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : Started DungconyApplication in 4.843 seconds (process running for 525.873)
+2026-05-20T14:00:27.333+07:00  INFO 3544 --- [dungcony] [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2026-05-20T14:00:27.470+07:00  INFO 3544 --- [dungcony] [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2026-05-20T14:00:27.598+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : Starting DungconyApplication using Java 21.0.9 with PID 3544 (D:\private\hi\target\classes started by dung0 in D:\private\hi)
+2026-05-20T14:00:27.598+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : The following 1 profile is active: "dev"
+2026-05-20T14:00:28.275+07:00  INFO 3544 --- [dungcony] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-20T14:00:28.275+07:00  INFO 3544 --- [dungcony] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-05-20T14:00:28.289+07:00  INFO 3544 --- [dungcony] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-20T14:00:28.408+07:00  INFO 3544 --- [dungcony] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2026-05-20T14:00:30.112+07:00  INFO 3544 --- [dungcony] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2026-05-20T14:00:41.015+07:00  INFO 3544 --- [dungcony] [restartedMain] c.d.d.m.p.services.impl.SizeCacheImpl    : Loaded 6 sizes into cache
+2026-05-20T14:00:41.159+07:00  INFO 3544 --- [dungcony] [restartedMain] c.d.d.m.payment.services.impl.VnPayImpl  : VNPay resolved payUrl=https://sandbox.vnpayment.vn/paymentv2/vpcpay.html, returnUrl=http://localhost:8080/v1/api/public/payment/vnpay/return
+2026-05-20T14:00:41.630+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : Started DungconyApplication in 14.059 seconds (process running for 541.616)
+2026-05-20T14:00:54.698+07:00  INFO 3544 --- [dungcony] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-20T14:00:55.605+07:00  INFO 3544 --- [dungcony] [http-nio-0.0.0.0-8080-exec-2] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 886 ms
+2026-05-20T14:01:01.123+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T14:01:01.278+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T14:01:23.247+07:00  INFO 3544 --- [dungcony] [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2026-05-20T14:01:23.401+07:00  INFO 3544 --- [dungcony] [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2026-05-20T14:01:23.501+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : Starting DungconyApplication using Java 21.0.9 with PID 3544 (D:\private\hi\target\classes started by dung0 in D:\private\hi)
+2026-05-20T14:01:23.502+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : The following 1 profile is active: "dev"
+2026-05-20T14:01:24.221+07:00  INFO 3544 --- [dungcony] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-20T14:01:24.222+07:00  INFO 3544 --- [dungcony] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-05-20T14:01:24.236+07:00  INFO 3544 --- [dungcony] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-20T14:01:24.395+07:00  INFO 3544 --- [dungcony] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2026-05-20T14:01:26.263+07:00  INFO 3544 --- [dungcony] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2026-05-20T14:01:37.151+07:00  WARN 3544 --- [dungcony] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController' defined in file [D:\private\hi\target\classes\com\dev\dungcony\modules\auth\controllers\user\AuthController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authImpl': Lookup method resolution failed
+2026-05-20T14:01:37.153+07:00  INFO 3544 --- [dungcony] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2026-05-20T14:01:37.312+07:00  INFO 3544 --- [dungcony] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2026-05-20T14:01:37.314+07:00  INFO 3544 --- [dungcony] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-05-20T14:01:37.376+07:00 ERROR 3544 --- [dungcony] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController' defined in file [D:\private\hi\target\classes\com\dev\dungcony\modules\auth\controllers\user\AuthController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authImpl': Lookup method resolution failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1395) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1232) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1228) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1194) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1130) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:991) ~[spring-context-6.2.16.jar:6.2.16]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:628) ~[spring-context-6.2.16.jar:6.2.16]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.11.jar:3.5.11]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.11.jar:3.5.11]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.11.jar:3.5.11]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.11.jar:3.5.11]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.11.jar:3.5.11]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.11.jar:3.5.11]
+	at com.dev.dungcony.DungconyApplication.main(DungconyApplication.java:15) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.11.jar:3.5.11]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authImpl': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:498) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:368) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1229) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1770) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1653) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.16.jar:6.2.16]
+	... 24 common frames omitted
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.dev.dungcony.modules.auth.services.impl.AuthImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@19380f30]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.2.16.jar:6.2.16]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-6.2.16.jar:6.2.16]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:476) ~[spring-beans-6.2.16.jar:6.2.16]
+	... 38 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/dev/dungcony/modules/users/exceptions/UserNotFound
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3580) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2678) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.2.16.jar:6.2.16]
+	... 40 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.dev.dungcony.modules.users.exceptions.UserNotFound
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:536) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:515) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.5.11.jar:3.5.11]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+	... 44 common frames omitted
+
+2026-05-20T14:01:38.886+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : Starting DungconyApplication using Java 21.0.9 with PID 3544 (D:\private\hi\target\classes started by dung0 in D:\private\hi)
+2026-05-20T14:01:38.887+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : The following 1 profile is active: "dev"
+2026-05-20T14:01:39.584+07:00  INFO 3544 --- [dungcony] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-20T14:01:39.585+07:00  INFO 3544 --- [dungcony] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-05-20T14:01:39.599+07:00  INFO 3544 --- [dungcony] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2026-05-20T14:01:39.725+07:00  INFO 3544 --- [dungcony] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
+2026-05-20T14:01:41.290+07:00  INFO 3544 --- [dungcony] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
+2026-05-20T14:01:52.714+07:00  INFO 3544 --- [dungcony] [restartedMain] c.d.d.m.p.services.impl.SizeCacheImpl    : Loaded 6 sizes into cache
+2026-05-20T14:01:52.856+07:00  INFO 3544 --- [dungcony] [restartedMain] c.d.d.m.payment.services.impl.VnPayImpl  : VNPay resolved payUrl=https://sandbox.vnpayment.vn/paymentv2/vpcpay.html, returnUrl=http://localhost:8080/v1/api/public/payment/vnpay/return
+2026-05-20T14:01:53.419+07:00  INFO 3544 --- [dungcony] [restartedMain] com.dev.dungcony.DungconyApplication     : Started DungconyApplication in 14.557 seconds (process running for 613.404)
+2026-05-20T14:02:01.120+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T14:02:01.278+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T14:02:09.373+07:00  INFO 3544 --- [dungcony] [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-20T14:02:10.088+07:00  INFO 3544 --- [dungcony] [http-nio-0.0.0.0-8080-exec-7] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 679 ms
+2026-05-20T14:03:02.357+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T14:03:02.509+07:00  INFO 3544 --- [dungcony] [scheduling-1] c.d.d.m.v.services.impl.ScheduleImpl     : Deactivated 0 expired vouchers.
+2026-05-20T14:03:38.368+07:00  INFO 3544 --- [dungcony] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2026-05-20T14:03:38.519+07:00  INFO 3544 --- [dungcony] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
