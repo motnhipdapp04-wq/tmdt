@@ -41,6 +41,8 @@ management:
       exposure:
         include: health
   health:
+    db:
+      enabled: false
     redis:
       enabled: false
   endpoint:

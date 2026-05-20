@@ -2,6 +2,7 @@ package com.dev.dungcony.modules.auth.services.impl;
 
 import com.dev.dungcony.modules.auth.entities.Account;
 import com.dev.dungcony.modules.auth.enums.Status;
+import com.dev.dungcony.modules.auth.exceptions.AccountNotFound;
 import com.dev.dungcony.modules.auth.exceptions.IncorrectInput;
 import com.dev.dungcony.modules.auth.exceptions.TokenInvalid;
 import com.dev.dungcony.modules.auth.repositories.AccountRepository;
@@ -34,7 +35,7 @@ public class AccountUpdateimpl implements AccountUpdateService {
 
     @Override
     public void updatePassword(String email, String newPassword) {
-        Account acc = accRepo.findByEmail(email).orElseThrow(TokenInvalid::new);
+        Account acc = accRepo.findByEmail(email).orElseThrow(AccountNotFound::new);
         acc.setPassword(passwordEncoder.encode(newPassword));
         accRepo.save(acc);
         log.info("Password updated for account: {}", acc.getUsername());
