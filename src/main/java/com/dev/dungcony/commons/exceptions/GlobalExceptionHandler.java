@@ -1,21 +1,26 @@
 package com.dev.dungcony.commons.exceptions;
 
 import com.dev.dungcony.commons.dtos.ApiRes;
+import jakarta.validation.ConstraintViolationException;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.beans.TypeMismatchException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.validation.BindException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.MissingRequestHeaderException;
 import org.springframework.web.bind.MissingRequestCookieException;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.servlet.NoHandlerFoundException;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 
@@ -125,6 +130,34 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ApiRes<Void>> handleInvalidJson(HttpMessageNotReadableException ex,
                                                           HttpServletRequest request) {
         String message = "JSON request không hợp lệ";
+        captureApiError(request, HttpStatus.BAD_REQUEST, ex, message);
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(ApiRes.error(message));
+    }
+
+    @ExceptionHandler({
+            MissingRequestHeaderException.class,
+            MissingServletRequestParameterException.class,
+            MethodArgumentTypeMismatchException.class,
+            TypeMismatchException.class,
+            ConstraintViolationException.class
+    })
+    public ResponseEntity<ApiRes<Void>> handleBadRequest(Exception ex, HttpServletRequest request) {
+        String message = "Request không hợp lệ";
+        if (ex instanceof MissingRequestHeaderException e) {
+            message = "Thiếu header bắt buộc: " + e.getHeaderName();
+        } else if (ex instanceof MissingServletRequestParameterException e) {
+            message = "Thiếu tham số bắt buộc: " + e.getParameterName();
+        } else if (ex instanceof MethodArgumentTypeMismatchException e) {
+            message = "Tham số không hợp lệ: " + e.getName();
+        } else if (ex instanceof ConstraintViolationException e) {
+            message = e.getConstraintViolations().stream()
+                    .findFirst()
+                    .map(violation -> violation.getPropertyPath() + " " + violation.getMessage())
+                    .orElse(message);
+        }
+
         captureApiError(request, HttpStatus.BAD_REQUEST, ex, message);
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
