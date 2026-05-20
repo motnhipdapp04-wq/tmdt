@@ -48,7 +48,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
             // 2. Kiểm tra header có tồn tại và bắt đầu với "Bearer "
             if (authHeader == null || !authHeader.startsWith(BEARER_PREFIX)) {
-                logger.debug("No JWT token found in request headers");
+                logger.debug("Không tìm thấy token JWT trong header của yêu cầu");
                 filterChain.doFilter(request, response);
                 return;
             }
@@ -58,7 +58,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
             // 4. Validate token
             if (!jwtService.validateToken(token)) {
-                logger.warn("Invalid JWT token");
+                logger.warn("Token JWT không hợp lệ");
                 filterChain.doFilter(request, response);
                 return;
             }
@@ -70,10 +70,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             Role role = jwtService.extractRole(token);
             UUID userUuid = jwtService.extractUserUuid(token);
 
-            logger.debug("Extracted from token - username: {}, userId: {}, role: {}", username, userId, role);
+            logger.debug("Đã đọc token - tên đăng nhập: {}, ID người dùng: {}, quyền: {}", username, userId, role);
 
             if (username == null || userId == null) {
-                logger.warn("Cannot extract user info from token");
+                logger.warn("Không đọc được thông tin người dùng từ token");
                 filterChain.doFilter(request, response);
                 return;
             }
@@ -87,10 +87,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             // SET VÀO SECURITY CONTEXT
             // Từ đây về sau, mọi nơi trong request này đều biết user đã login
             SecurityContextHolder.getContext().setAuthentication(authentication);
-            logger.debug("JWT authentication successful for user: {}", username);
+            logger.debug("Xác thực JWT thành công cho người dùng: {}", username);
 
         } catch (Exception e) {
-            logger.error("Cannot set user authentication: {}", e.getMessage());
+            logger.error("Không thể gán thông tin xác thực cho người dùng: {}", e.getMessage());
         }
 
         // 7. Continue filter chain

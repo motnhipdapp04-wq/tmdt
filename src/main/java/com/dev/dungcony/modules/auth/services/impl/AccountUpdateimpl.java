@@ -30,7 +30,7 @@ public class AccountUpdateimpl implements AccountUpdateService {
 
         acc.setPassword(passwordEncoder.encode(newPassword));
         accRepo.save(acc);
-        log.info("Password updated for account: {}", acc.getUsername());
+        log.info("Đã cập nhật mật khẩu cho tài khoản: {}", acc.getUsername());
     }
 
     @Override
@@ -38,7 +38,7 @@ public class AccountUpdateimpl implements AccountUpdateService {
         Account acc = accRepo.findByEmail(email).orElseThrow(AccountNotFound::new);
         acc.setPassword(passwordEncoder.encode(newPassword));
         accRepo.save(acc);
-        log.info("Password updated for account: {}", acc.getUsername());
+        log.info("Đã cập nhật mật khẩu cho tài khoản: {}", acc.getUsername());
     }
 
     @Override
@@ -46,7 +46,7 @@ public class AccountUpdateimpl implements AccountUpdateService {
         Account acc = accRepo.findById(accId).orElseThrow(TokenInvalid::new);
         acc.setEmail(newEmail);
         accRepo.save(acc);
-        log.info("Email updated for account: {}", acc.getUsername());
+        log.info("Đã cập nhật email cho tài khoản: {}", acc.getUsername());
     }
 
     @Override
@@ -69,6 +69,6 @@ public class AccountUpdateimpl implements AccountUpdateService {
                 .orElseThrow(() -> new IllegalArgumentException("Account not found: " + accId));
         acc.setStatus(newStatus);
         accRepo.save(acc);
-        log.info("Status updated to {} for account: {}", newStatus, acc.getUsername());
+        log.info("Đã cập nhật trạng thái {} cho tài khoản: {}", newStatus, acc.getUsername());
     }
 }

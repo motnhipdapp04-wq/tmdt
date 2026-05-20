@@ -93,7 +93,7 @@ public class VietQrCallbackImpl implements VietQrCallbackService {
                     .getSubject();
             return TOKEN_SUBJECT.equals(subject);
         } catch (JwtException | IllegalArgumentException ex) {
-            log.warn("VietQR callback token invalid: {}", ex.getMessage());
+            log.warn("Token VietQR gửi callback không hợp lệ: {}", ex.getMessage());
             return false;
         }
     }
@@ -109,7 +109,7 @@ public class VietQrCallbackImpl implements VietQrCallbackService {
         markOrderPaidIfNeeded(order);
 
         String refTransactionId = firstNotBlank(req.transactionid(), req.referencenumber(), orderCode);
-        log.info("VietQR transaction synced: order={}, transaction={}, amount={}",
+        log.info("Đã đồng bộ giao dịch VietQR: đơn hàng={}, giao dịch={}, số tiền={}",
                 orderCode, refTransactionId, req.amount());
 
         return VietQrTransactionSyncRes.success(refTransactionId);

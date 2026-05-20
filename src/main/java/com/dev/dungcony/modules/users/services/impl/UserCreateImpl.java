@@ -30,9 +30,9 @@ public class UserCreateImpl implements UserCreateService {
         UUID uuid = UUID.randomUUID();
         user.setId(uuid);
         user.setAccountId(accId);
-        log.info("bắt đầu khởi tạo user {}", user.getId());
+        log.info("Bắt đầu khởi tạo hồ sơ người dùng: {}", user.getId());
         userRepository.saveAndFlush(user);
-        log.info("User {} created", user.getId());
+        log.info("Đã tạo hồ sơ người dùng: {}", user.getId());
         userVoucherService.applyNewbieVoucher(uuid);
 
         return UserMapper.toUserDto(user);

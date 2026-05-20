@@ -41,7 +41,7 @@ public class AuthImpl implements AuthService {
     @Override
     public void register(RegisReq req) {
 
-        log.info("Registering account with email: {}, username: {}", req.email(), req.username());
+        log.info("Bắt đầu đăng ký tài khoản email={}, tên đăng nhập={}", req.email(), req.username());
 
         accountCheckService.existsByEmail(req.email());
         accountCheckService.existsByUsername(req.username());
@@ -53,7 +53,7 @@ public class AuthImpl implements AuthService {
     @Override
     public LoginResult login(String username, String password, String deviceId) {
 
-        log.info("Logging in account with username: {}", username);
+        log.info("Bắt đầu đăng nhập tài khoản tên đăng nhập={}", username);
 
         AccDto acc = accGetService.getByUsername(username);
 
@@ -66,7 +66,7 @@ public class AuthImpl implements AuthService {
         if (acc.status() != Status.ACTIVE)
             throw new IncorrectInput(); // account bị khóa
 
-        log.info("Login successful for account: {}", acc.username());
+        log.info("Đăng nhập thành công tài khoản: {}", acc.username());
 
         String acessToken = jwtService.generateToken(acc.id(), acc.username(), acc.role(), resolveUserUuid(acc.id()));
         String refreshToken = refreshTokenService.create(acc.id(), deviceId);
@@ -78,7 +78,7 @@ public class AuthImpl implements AuthService {
                 .sameSite("Lax")
                 .maxAge(jwtConfig.getRefreshExpiration())
                 .build();
-        log.info("Generated refresh token for account: {}", acc.username());
+        log.info("Đã tạo refresh token cho tài khoản: {}", acc.username());
 
         return new LoginResult(acessToken, JwtConfig.headerPrefix, jwtConfig.getExpiration(), refreshCookie.toString());
     }
@@ -96,11 +96,11 @@ public class AuthImpl implements AuthService {
         try {
             return userGetService.getUserByAccId(accId).id();
         } catch (UserNotFound e) {
-            log.info("khởi tạo user cho accId: {}", accId);
+            log.info("Không tìm thấy hồ sơ người dùng cho accId {}, bắt đầu khởi tạo", accId);
             try {
                 return userCreateService.createUser(accId).id();
             } catch (Exception ex) {
-                log.warn("createUser failed (possible race condition), retrying get: {}", ex.getMessage());
+                log.warn("Tạo hồ sơ người dùng thất bại (có thể do xử lý đồng thời), thử lấy lại hồ sơ: {}", ex.getMessage());
                 return userGetService.getUserByAccId(accId).id();
             }
         }

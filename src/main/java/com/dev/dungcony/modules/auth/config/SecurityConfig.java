@@ -81,7 +81,7 @@ public class SecurityConfig {
                         .anyRequest().authenticated())
                 .exceptionHandling(ex -> ex
                         .authenticationEntryPoint((request, response, authException) -> {
-                            log.warn("401 Unauthorized - path: {}, reason: {}", request.getRequestURI(), authException.getMessage());
+                            log.warn("401 Chưa xác thực - đường dẫn: {}, lý do: {}", request.getRequestURI(), authException.getMessage());
                             response.setStatus(401);
                             response.setContentType(MediaType.APPLICATION_JSON_VALUE);
                             objectMapper.writeValue(response.getOutputStream(), Map.of(
@@ -93,7 +93,7 @@ public class SecurityConfig {
                         })
                         .accessDeniedHandler((request, response, accessDeniedException) -> {
                             var auth = request.getUserPrincipal();
-                            log.warn("403 Forbidden - path: {}, user: {}, reason: {}",
+                            log.warn("403 Không có quyền - đường dẫn: {}, người dùng: {}, lý do: {}",
                                     request.getRequestURI(),
                                     auth != null ? auth.getName() : "anonymous",
                                     accessDeniedException.getMessage());

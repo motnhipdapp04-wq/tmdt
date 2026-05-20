@@ -57,7 +57,7 @@ public class PromotionProductServiceImpl implements PromotionProductService {
     @Transactional
     @Override
     public void addListPromotionProduct(Promotion pro, List<String> productCodes) {
-        log.info("Adding {} promotion-product mappings for promotionId={}", productCodes.size(), pro.getId());
+        log.info("Thêm {} liên kết khuyến mãi-sản phẩm cho id khuyến mãi={}", productCodes.size(), pro.getId());
 
         List<PromotionProduct> mappings = productCodes.stream()
                 .map(productCode -> {

@@ -24,7 +24,7 @@ public class ScheduleImpl {
     @Transactional
     public void checkUpdateVoucher() {
         Instant now = Instant.now();
-        log.info("Deactivated {} expired vouchers.", voucherUpdateService.checkOrUpdate(now));
-        log.info("Deactivated {} expired vouchers.", userVoucherUpdateService.checkOrUpdate(now));
+        log.info("Đã vô hiệu hóa {} voucher hết hạn.", voucherUpdateService.checkOrUpdate(now));
+        log.info("Đã vô hiệu hóa {} voucher của người dùng đã hết hạn.", userVoucherUpdateService.checkOrUpdate(now));
     }
 }

@@ -57,7 +57,7 @@ public class JwtConfig {
         if (prod && (secret == null || secret.isBlank() || JWT_DEV_PLACEHOLDER.equals(secret))) {
             if (isLocalDatabaseUrl(environment)) {
                 log.warn(
-                        "Profile prod but JWT_SECRET missing or default dev: allowing only because datasource URL looks local ({}). Set JWT_SECRET for real production.",
+                        "Đang chạy hồ sơ prod nhưng JWT_SECRET thiếu hoặc đang dùng secret dev; tạm cho phép vì URL cơ sở dữ liệu có vẻ local ({}). Hãy set JWT_SECRET cho production thật.",
                         maskJdbcUrl(environment.getProperty("spring.datasource.url", "")));
                 return;
             }

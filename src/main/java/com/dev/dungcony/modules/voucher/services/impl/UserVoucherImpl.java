@@ -41,7 +41,7 @@ public class UserVoucherImpl implements UserVoucherCreateService, UserVoucherGet
 
     @Override
     public void applyNewbieVoucher(UUID uid) {
-        log.info("applyNewbieVoucher", uid);
+        log.info("Áp dụng voucher người mới cho người dùng: {}", uid);
         List<Voucher> vouchers = voucherGetService.getByTypeAndStatus(VoucherType.NEWBIE, VoucherStatus.ACTIVE);
 
         List<UserVoucher> uvs = new ArrayList<>();

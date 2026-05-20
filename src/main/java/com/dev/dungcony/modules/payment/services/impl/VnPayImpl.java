@@ -46,7 +46,7 @@ public class VnPayImpl implements VnPayService {
 
     @PostConstruct
     void logResolvedVnPayUrls() {
-        log.info("VNPay resolved payUrl={}, returnUrl={}", vnPayProperties.resolvedPayUrl(), vnPayProperties.resolvedReturnUrl());
+        log.info("Đã xác định URL VNPay: payUrl={}, returnUrl={}", vnPayProperties.resolvedPayUrl(), vnPayProperties.resolvedReturnUrl());
     }
 
     @Override
@@ -79,7 +79,7 @@ public class VnPayImpl implements VnPayService {
                 + "&vnp_SecureHash=" + secureHash;
         PaymentQrRes bankTransferQr = vietQrService.createOrderQr(order);
 
-        log.info("VNPay payment URL created for order: {}", orderCode);
+        log.info("Đã tạo URL thanh toán VNPay cho đơn hàng {}", orderCode);
         return new PaymentRes(orderCode, paymentUrl, bankTransferQr);
     }
 
@@ -99,7 +99,7 @@ public class VnPayImpl implements VnPayService {
 
         //so sánh chữ ký tự tính và chữ ký vnPay trả về
         if (!calculatedHash.equalsIgnoreCase(vnpSecureHash)) {
-            log.warn("VNPay signature mismatch for txnRef: {}", params.get("vnp_TxnRef"));
+            log.warn("Chữ ký VNPay không khớp cho vnp_TxnRef={}", params.get("vnp_TxnRef"));
             return false;
         }
 
@@ -109,22 +109,22 @@ public class VnPayImpl implements VnPayService {
 
         OrderDto order = orderGetService.getDtoByCode(orderCode);
         if (order == null) {
-            log.warn("VNPay callback: không tìm thấy order: {}", orderCode);
+            log.warn("Kết quả trả về từ VNPay: không tìm thấy đơn hàng {}", orderCode);
             return false;
         }
 
         if (order.status() != OrderStatus.UNPAID) {
-            log.info("VNPay callback: order {} already processed (status={})", orderCode, order.status());
+            log.info("Kết quả trả về từ VNPay: đơn hàng {} đã được xử lý trước đó (trạng thái={})", orderCode, order.status());
             return "00".equals(responseCode);
         }
 
         if ("00".equals(responseCode) && "00".equals(transactionStatus)) {
             orderUpdateService.userPaidOrder(order.uid(), orderCode);
-            log.info("VNPay payment success for order: {}", orderCode);
+            log.info("Thanh toán VNPay thành công cho đơn hàng {}", orderCode);
             return true;
         }
 
-        log.warn("VNPay payment failed for order: {}, responseCode: {}", orderCode, responseCode);
+        log.warn("Thanh toán VNPay thất bại cho đơn hàng {}, mã phản hồi={}", orderCode, responseCode);
         return false;
     }
 

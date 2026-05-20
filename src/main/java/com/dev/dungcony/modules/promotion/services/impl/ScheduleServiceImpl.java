@@ -35,7 +35,7 @@ public class ScheduleServiceImpl {
         int expiredCount = promotionRepository.bulkExpirePromotions(PromotionStatus.ACTIVE, now);
 
         if (expiredCount > 0) {
-            log.info("Expired {} active promotions.", expiredCount);
+            log.info("Đã kết thúc {} khuyến mãi đang hoạt động.", expiredCount);
         }
     }
 
@@ -57,10 +57,10 @@ public class ScheduleServiceImpl {
         int expiredScheduledCount = promotionRepository.bulkExpireScheduledPromotions(PromotionStatus.SCHEDULED, now);
 
         if (activatedCount > 0) {
-            log.info("Activated {} scheduled promotions.", activatedCount);
+            log.info("Đã kích hoạt {} khuyến mãi đã lên lịch.", activatedCount);
         }
         if (expiredScheduledCount > 0) {
-            log.info("Expired {} overdue scheduled promotions.", expiredScheduledCount);
+            log.info("Đã kết thúc {} khuyến mãi đã lên lịch nhưng quá hạn.", expiredScheduledCount);
         }
     }
 }

@@ -30,7 +30,7 @@ public class AuthController {
     public ResponseEntity<ApiRes<AcessTokenRes>> login(
             @Valid @RequestBody LoginReq loginReq,
             @Parameter(description = "ID định danh thiết bị, FE tự sinh UUID và lưu lại", required = true, example = "device-uuid-abc123") @RequestHeader("X-Device-Id") String deviceId) {
-        log.info("Login req: {}", loginReq);
+        log.info("Yêu cầu đăng nhập: {}", loginReq);
 
         LoginResult res = authService.login(loginReq.username(), loginReq.password(), deviceId);
 
@@ -62,7 +62,7 @@ public class AuthController {
                     .body(ApiRes.error("Missing refresh_token cookie"));
         }
 
-        log.info("Logout token: {}", token);
+        log.info("Yêu cầu đăng xuất cho thiết bị: {}", deviceId);
         authService.logout(token, deviceId);
         return ResponseEntity.ok().body(ApiRes.success("logout success"));
     }

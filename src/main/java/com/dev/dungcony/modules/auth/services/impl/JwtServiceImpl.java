@@ -69,7 +69,7 @@ public class JwtServiceImpl implements JwtService {
             Claims claims = extractAllClaims(token);
             return claims.get("username", String.class);
         } catch (Exception e) {
-            log.error("Error extracting username from token: {}", e.getMessage());
+            log.error("Lỗi đọc tên đăng nhập từ token: {}", e.getMessage());
             return null;
         }
     }
@@ -81,7 +81,7 @@ public class JwtServiceImpl implements JwtService {
             String subject = claims.getSubject();
             return Integer.parseInt(subject);
         } catch (Exception e) {
-            log.error("Error extracting user ID from token: {}", e.getMessage());
+            log.error("Lỗi đọc ID người dùng từ token: {}", e.getMessage());
             return null;
         }
     }
@@ -93,7 +93,7 @@ public class JwtServiceImpl implements JwtService {
             String raw = claims.get("userUuid", String.class);
             return raw != null ? UUID.fromString(raw) : null;
         } catch (Exception e) {
-            log.error("Error extracting userUuid from token: {}", e.getMessage());
+            log.error("Lỗi đọc UUID người dùng từ token: {}", e.getMessage());
             return null;
         }
     }
@@ -105,7 +105,7 @@ public class JwtServiceImpl implements JwtService {
             String role = claims.get("role", String.class);
             return Role.valueOf(role);
         } catch (Exception e) {
-            log.error("Error extracting role from token: {}", e.getMessage());
+            log.error("Lỗi đọc quyền từ token: {}", e.getMessage());
             return null;
         }
     }
@@ -116,7 +116,7 @@ public class JwtServiceImpl implements JwtService {
             Claims claims = extractAllClaims(token);
             return claims.get("email", String.class);
         } catch (Exception e) {
-            log.error("Error extracting email from token: {}", e.getMessage());
+            log.error("Lỗi đọc email từ token: {}", e.getMessage());
             return null;
         }
     }
@@ -129,7 +129,7 @@ public class JwtServiceImpl implements JwtService {
             extractAllClaims(token);
             return !isTokenExpired(token);
         } catch (Exception e) {
-            log.error("Token validation failed: {}", e.getMessage());
+            log.error("Xác thực token thất bại: {}", e.getMessage());
             return false;
         }
     }
@@ -141,7 +141,7 @@ public class JwtServiceImpl implements JwtService {
             Date expiration = claims.getExpiration();
             return expiration.before(new Date());
         } catch (Exception e) {
-            log.error("Error checking token expiration: {}", e.getMessage());
+            log.error("Lỗi kiểm tra hạn token: {}", e.getMessage());
             return true;
         }
     }

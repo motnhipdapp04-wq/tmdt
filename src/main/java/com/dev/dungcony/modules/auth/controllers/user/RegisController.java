@@ -42,7 +42,7 @@ public class RegisController {
             """)
     @PostMapping("")
     public ResponseEntity<ApiRes<Void>> register(@Valid @RequestBody RegisReq req) {
-        log.info("Register req: {}", req);
+        log.info("Yêu cầu đăng ký: {}", req);
         authService.register(req);
         return ResponseEntity.ok().body(ApiRes.success("register success"));
     }

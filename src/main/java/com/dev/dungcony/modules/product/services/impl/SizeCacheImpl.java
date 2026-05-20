@@ -38,7 +38,7 @@ public class SizeCacheImpl implements SizeCacheService {
         sizeById = sizes.stream()
                 .collect(Collectors.toMap(Size::getId, s -> s));
 
-        log.info("Loaded {} sizes into cache", sizes.size());
+        log.info("Đã nạp {} kích cỡ vào bộ nhớ đệm", sizes.size());
     }
 
     @Override

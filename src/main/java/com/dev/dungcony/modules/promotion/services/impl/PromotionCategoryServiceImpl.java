@@ -31,7 +31,7 @@ public class PromotionCategoryServiceImpl implements PromotionCategoryService {
     @Transactional
     @Override
     public void addListPromotionCategory(Promotion promotion, List<String> categoryCodes) {
-        log.info("Adding {} promotion-category mappings for promotionId={}", categoryCodes.size(), promotion.getId());
+        log.info("Thêm {} liên kết khuyến mãi-danh mục cho id khuyến mãi={}", categoryCodes.size(), promotion.getId());
 
         List<PromotionCategory> mappings = categoryCodes.stream()
                 .map(categoryCode -> {

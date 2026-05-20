@@ -39,7 +39,7 @@ public class PromotionCalculatorImpl implements PromotionCalculator {
 
         @Override
         public DiscountInfoDto calculateFinalPrice(String productCode, String categoryCode, BigDecimal price) {
-                log.debug("Calculating final price for productCode={}, categoryCode={}, price={}", productCode,
+                log.debug("Tính giá cuối cho mã sản phẩm={}, mã danh mục={}, giá={}", productCode,
                                 categoryCode, price);
 
                 Instant now = Instant.now();
@@ -124,7 +124,7 @@ public class PromotionCalculatorImpl implements PromotionCalculator {
                 BigDecimal discount = bestPromotion.calculateDiscount(price);
                 BigDecimal finalPrice = price.subtract(discount);
 
-                log.debug("Best promotion: type={}, value={}, discount={}, finalPrice={}",
+                log.debug("Khuyến mãi tốt nhất: loại={}, giá trị={}, giảm={}, giá cuối={}",
                                 bestPromotion.promotionType(), bestPromotion.value(), discount, finalPrice);
 
                 return new DiscountInfoDto(price, finalPrice, bestPromotion.promotionType().getValue(),

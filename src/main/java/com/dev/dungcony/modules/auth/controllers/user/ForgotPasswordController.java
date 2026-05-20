@@ -34,7 +34,7 @@ public class ForgotPasswordController {
             summary = "Quên mật khẩu",
             description = """
                     Hệ thống tạo mật khẩu mới ngẫu nhiên và gửi về email đã đăng ký.
-                    
+
                     **Lưu ý:**
                     - Email phải đã tồn tại trong hệ thống
                     - Sau khi nhận mật khẩu mới, nên đổi lại mật khẩu ngay tại `POST /v1/api/account/update/password`
@@ -56,7 +56,7 @@ public class ForgotPasswordController {
     public ResponseEntity<ApiRes<Void>> forgotPassword(
             @Parameter(description = "Email đã đăng ký tài khoản", required = true, example = "user@example.com")
             @RequestParam @NotBlank @Email String email) {
-        log.info("Forgot password request for email: {}", email);
+        log.info("Yêu cầu quên mật khẩu cho email: {}", email);
         forgotPasswordService.forgotPassword(email);
         return ResponseEntity.ok().body(ApiRes.success("New password sent to your email"));
     }

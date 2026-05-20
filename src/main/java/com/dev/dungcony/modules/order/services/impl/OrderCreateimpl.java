@@ -90,7 +90,7 @@ public class OrderCreateimpl implements OrderCreateService {
 
 
         cartUpdateService.removeListItem(userId, orderItemDetail.cartItemDtos);
-        log.info("Order created: {} for user: {}", order.getCode(), userId);
+        log.info("Đã tạo đơn hàng {} cho người dùng {}", order.getCode(), userId);
         notificationCreateService.userCreateOrder(userId);
 
         String paymentUrl = null;
@@ -182,9 +182,9 @@ public class OrderCreateimpl implements OrderCreateService {
             if (voucherCode != null) {
                 this.finalPrice = userVoucherService.applyVoucher(voucherCode, userId, this.totalPrice);
                 userVoucherUpdateService.apllyVoucherComplete(userId, voucherCode);
-                log.info("có voucher: {}", voucherCode);
+                log.info("Áp dụng voucher: {}", voucherCode);
             } else {
-                log.info("không có voucher");
+                log.info("Không áp dụng voucher");
             }
             this.voucherDiscount = totalPrice.subtract(finalPrice);
 

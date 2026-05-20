@@ -69,7 +69,7 @@ public class EmailImpl implements EmailService {
     private void send(String email, String subject, String body) {
         if (sendgridApiKey != null && !sendgridApiKey.isBlank()) {
             try {
-                log.info("Bắt đầu gửi email (SendGrid API HTTPS) tới: {} | from: {}", email, mailProperties.getFrom());
+                log.info("Bắt đầu gửi email (SendGrid API HTTPS) tới: {} | người gửi: {}", email, mailProperties.getFrom());
                 sendViaSendGridApi(email, subject, body);
                 log.info("Đã gửi email tới: {}", email);
                 return;
@@ -80,7 +80,7 @@ public class EmailImpl implements EmailService {
         }
 
         try {
-            log.info("Bắt đầu gửi email (SMTP) — tới: {} | SMTP {}:{} | from: {} | user: {} (mật khẩu không ghi log)",
+            log.info("Bắt đầu gửi email (SMTP) — tới: {} | SMTP {}:{} | người gửi: {} | tài khoản SMTP: {} (mật khẩu không ghi log)",
                     email, mailHost, mailPort, mailProperties.getFrom(), maskUsername(mailUsername));
             mailSender.send(getMail(
                     email,
@@ -91,7 +91,7 @@ public class EmailImpl implements EmailService {
             String chain = buildCauseChainForLog(e);
             String hint = diagnoseSmtpError(chain);
             log.error(
-                    "Lỗi gửi email tới: {} | phân loại: {} | nội dung: {} | smtp: {}:{} | user: {}",
+                    "Lỗi gửi email tới: {} | phân loại: {} | nội dung: {} | máy chủ SMTP: {}:{} | tài khoản SMTP: {}",
                     email, hint, chain, mailHost, mailPort, maskUsername(mailUsername), e);
             throw new SendEmailException();
         }
@@ -121,7 +121,7 @@ public class EmailImpl implements EmailService {
                     .retrieve()
                     .toBodilessEntity();
         } catch (RestClientResponseException ex) {
-            log.error("SendGrid HTTP {} — body: {}", ex.getStatusCode(), ex.getResponseBodyAsString());
+            log.error("SendGrid trả HTTP {} — nội dung phản hồi: {}", ex.getStatusCode(), ex.getResponseBodyAsString());
             throw ex;
         }
     }

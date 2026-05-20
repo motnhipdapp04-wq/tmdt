@@ -64,7 +64,7 @@ public class GlobalExceptionHandler {
 
         ex.getBindingResult().getFieldErrors()
                 .forEach(err -> errors.put(err.getField(), err.getDefaultMessage()));
-        log.warn("Validation failed for {} {}: {}", request.getMethod(), request.getRequestURI(), errors);
+        log.warn("Dữ liệu yêu cầu không hợp lệ tại {} {}: {}", request.getMethod(), request.getRequestURI(), errors);
         captureApiError(request, HttpStatus.BAD_REQUEST, ex, "Validation failed");
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
@@ -99,7 +99,7 @@ public class GlobalExceptionHandler {
                     .body(ApiRes.error("Email hoặc username đã tồn tại"));
         }
 
-        log.error("Database error", ex);
+        log.error("Lỗi cơ sở dữ liệu", ex);
         captureApiError(request, HttpStatus.INTERNAL_SERVER_ERROR, ex, "Database error, please try again later");
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -109,7 +109,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<ApiRes<Void>> handleDataIntegrityViolation(DataIntegrityViolationException ex,
                                                                      HttpServletRequest request) {
-        log.warn("Data integrity violation", ex);
+        log.warn("Vi phạm ràng buộc dữ liệu", ex);
 
         if (isDuplicateKeyError(ex)) {
             captureApiError(request, HttpStatus.CONFLICT, ex, "Email hoặc username đã tồn tại");
@@ -184,7 +184,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ApiRes<Void>> handleException(Exception ex, HttpServletRequest request) {
-        log.error("Unhandled exception", ex);
+        log.error("Lỗi chưa được xử lý", ex);
         captureApiError(request, HttpStatus.INTERNAL_SERVER_ERROR, ex, "Server Error");
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)

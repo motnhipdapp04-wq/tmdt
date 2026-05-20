@@ -53,7 +53,7 @@ public class VietQrCallbackController {
             VietQrTransactionSyncRes res = vietQrCallbackService.syncTransaction(req);
             return ResponseEntity.ok(res);
         } catch (RuntimeException ex) {
-            log.warn("VietQR transaction sync failed: {}", ex.getMessage());
+            log.warn("Đồng bộ giao dịch VietQR thất bại: {}", ex.getMessage());
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
                     .body(VietQrTransactionSyncRes.failure(

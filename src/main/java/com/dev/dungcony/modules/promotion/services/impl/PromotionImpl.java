@@ -42,7 +42,7 @@ public class PromotionImpl implements PromotionService {
     @Transactional
     @Override
     public PromotionDetailRes addNew(PromoAddReq req) {
-        log.info("Adding new promotion: {}", req);
+        log.info("Thêm khuyến mãi mới: {}", req);
 
         Promotion promotion = PromotionMapper.toEntity(req);
         promotion.setStatus(initSatus(req.startAt(), req.endAt()));
@@ -63,7 +63,7 @@ public class PromotionImpl implements PromotionService {
 
     @Override
     public void softDelete(Integer id) {
-        log.info("Soft-deleting promotion id={}", id);
+        log.info("Xóa mềm khuyến mãi id={}", id);
         Promotion promotion = promotionRepository.findById(id)
                 .orElseThrow(() -> new PromotionNotFound("Promotion not found with code: " + id));
 
@@ -79,7 +79,7 @@ public class PromotionImpl implements PromotionService {
     @Transactional
     @Override
     public PromotionDetailRes update(PromoUpdateReq req) {
-        log.info("Updating promotion code={}", req.id());
+        log.info("Cập nhật khuyến mãi id={}", req.id());
 
         Promotion promotion = promotionRepository.findById(req.id())
                 .orElseThrow(PromotionNotFound::new);
@@ -114,7 +114,7 @@ public class PromotionImpl implements PromotionService {
             promotion.setPriority(req.priority());
 
         promotionRepository.save(promotion);
-        log.info("Successfully updated promotion code={}", req.id());
+        log.info("Cập nhật khuyến mãi id={} thành công", req.id());
 
         return PromotionMapper.toDetailRes(promotion);
     }

@@ -50,7 +50,7 @@ public class OrderUpdateImpl implements OrderUpdateService {
                     orderItem.getQuantity());
         }
 
-        log.info("Order cancelled: {} by user: {}", orderCode, userId);
+        log.info("Đã hủy đơn hàng {} bởi người dùng {}", orderCode, userId);
         notificationCreateService.userCancelOrder(userId);
     }
 
@@ -70,7 +70,7 @@ public class OrderUpdateImpl implements OrderUpdateService {
         order.setStatus(OrderStatus.PAID);
         notificationCreateService.userPailOrder(userId);
 
-        log.info("thanh toán thành công");
+        log.info("Thanh toán đơn hàng {} thành công cho người dùng {}", orderCode, userId);
     }
 
     @Transactional
@@ -87,7 +87,7 @@ public class OrderUpdateImpl implements OrderUpdateService {
         }
 
         order.setStatus(OrderStatus.CONFIRMED);
-        log.info("giao hàng {} thành công cho  user: {}", orderCode, userId);
+        log.info("Người dùng {} xác nhận đơn hàng {}", userId, orderCode);
     }
 
     @Transactional
@@ -101,7 +101,7 @@ public class OrderUpdateImpl implements OrderUpdateService {
         }
 
         order.setStatus(OrderStatus.DELIVERED);
-        log.info("Order confirmed: {}", orderCode);
+        log.info("Quản trị viên xác nhận đã giao đơn hàng {}", orderCode);
     }
 
     @Transactional
@@ -115,7 +115,7 @@ public class OrderUpdateImpl implements OrderUpdateService {
         }
 
         order.setStatus(OrderStatus.DELIVERED);
-        log.info("Order shipping: {}", orderCode);
+        log.info("Quản trị viên cập nhật trạng thái giao hàng cho đơn hàng {}", orderCode);
     }
 
     @Transactional
@@ -129,7 +129,7 @@ public class OrderUpdateImpl implements OrderUpdateService {
         }
 
         order.setStatus(OrderStatus.DELIVERED);
-        log.info("Order delivered: {}", orderCode);
+        log.info("Đơn hàng {} đã giao thành công", orderCode);
     }
 
     @Override

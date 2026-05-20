@@ -23,14 +23,14 @@ public class VerifyOtpImpl implements VerifyOtpService {
     @Override
     public void verifyOtpRegister(VerifyOtpReq req) {
         String value = redisService.getValue(generate.key(req.email(), OtpType.REGISTER.getValue()));
-        log.info("value regis: {}", value);
+        log.info("Đã đọc OTP đăng ký từ Redis cho email: {}", req.email());
 
         if (value == null)
             throw new OtpExpire();
         if (!passwordEncoder.matches(req.otp(), value))
             throw new OtpIsIncorrect();
 
-        log.info("otpregis verify success");
+        log.info("Xác thực OTP đăng ký thành công cho email: {}", req.email());
         accountUpdateService.verify(req.email());
         redisService.delete(generate.key(req.email(), OtpType.REGISTER.getValue()));
     }
@@ -38,14 +38,14 @@ public class VerifyOtpImpl implements VerifyOtpService {
     @Override
     public void verifyOtpEmailChange(int accid, String username, String newEmail, String otp) {
         String value = redisService.getValue(generate.key(username, OtpType.CHANGE_EMAIL.getValue()));
-        log.info("value emailchange: {}", value);
+        log.info("Đã đọc OTP đổi email từ Redis cho tên đăng nhập: {}", username);
 
         if (value == null)
             throw new OtpExpire();
         if (!passwordEncoder.matches(otp, value))
             throw new OtpIsIncorrect();
 
-        log.info("otp emailchange verify success");
+        log.info("Xác thực OTP đổi email thành công cho tên đăng nhập: {}", username);
 
         accountUpdateService.updateEmail(accid, newEmail);
         redisService.delete(generate.key(username, OtpType.CHANGE_EMAIL.getValue()));
