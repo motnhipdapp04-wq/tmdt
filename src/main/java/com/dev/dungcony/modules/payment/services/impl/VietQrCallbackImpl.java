@@ -60,8 +60,9 @@ public class VietQrCallbackImpl implements VietQrCallbackService {
         }
 
         // Sai username/password thi khong cap token
-        if (!secureEquals(credentials[0], properties.callbackUsername())
-                || !secureEquals(credentials[1], properties.callbackPassword())) {
+        boolean usernameMatches = secureEquals(credentials[0], properties.callbackUsername());
+        boolean passwordMatches = secureEquals(credentials[1], properties.callbackPassword());
+        if (!usernameMatches || !passwordMatches) {
             return Optional.empty();
         }
 
