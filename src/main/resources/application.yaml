@@ -69,8 +69,8 @@ vietqr:
   content-prefix: ${VIETQR_CONTENT_PREFIX:}
   image-base-url: ${VIETQR_IMAGE_BASE_URL:https://img.vietqr.io/image}
   service-code: ${VIETQR_SERVICE_CODE:QRIBFTTA}
-  callback-username: ${VIETQR_CALLBACK_USERNAME:vietqr}
-  callback-password: ${VIETQR_CALLBACK_PASSWORD:vietqr}
+  callback-username: ${VIETQR_CALLBACK_USERNAME:dungcony}
+  callback-password: ${VIETQR_CALLBACK_PASSWORD:dungcony}
   callback-token-secret: ${VIETQR_CALLBACK_TOKEN_SECRET:vietqr-callback-secret-change-me-in-production-2026-05-19-hs512-key}
   callback-token-ttl-seconds: ${VIETQR_CALLBACK_TOKEN_TTL_SECONDS:300}
 
