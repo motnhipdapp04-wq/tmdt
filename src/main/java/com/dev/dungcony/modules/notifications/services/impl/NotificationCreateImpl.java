@@ -10,6 +10,7 @@ import com.dev.dungcony.modules.notifications.repositories.NotificationRepositor
 import com.dev.dungcony.modules.notifications.services.interfaces.NotificationCreateService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.jspecify.annotations.NonNull;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -81,19 +82,7 @@ public class NotificationCreateImpl implements NotificationCreateService {
     @Transactional
     @Override
     public List<String> adminCreate(AdminCreateNotificationReq req) {
-
-        List<Notification> notis = NotiMapper.toEntity(req);
-
-        if (notis.isEmpty()) {
-            return Collections.emptyList();
-        }
-
-        List<Notification> savedNotis = notificationRepository.saveAll(notis);
-
-        return savedNotis.stream()
-                .map(Notification::getCode)
-                .filter(Objects::nonNull)
-                .toList();
+        return getNotis(req);
     }
 
     @Override
@@ -104,18 +93,7 @@ public class NotificationCreateImpl implements NotificationCreateService {
                 "đơn hàng của bạn đã được xác nhận"
         );
 
-        List<Notification> notis = NotiMapper.toEntity(req);
-
-        if (notis.isEmpty()) {
-            return Collections.emptyList();
-        }
-
-        List<Notification> savedNotis = notificationRepository.saveAll(notis);
-
-        return savedNotis.stream()
-                .map(Notification::getCode)
-                .filter(Objects::nonNull)
-                .toList();
+        return getNotis(req);
     }
 
     @Override
@@ -127,6 +105,12 @@ public class NotificationCreateImpl implements NotificationCreateService {
                 "đơn hàng của bạn đã được giao vui lòng xác nhận"
         );
 
+        return getNotis(req);
+    }
+
+
+    @NonNull
+    private List<String> getNotis(AdminCreateNotificationReq req) {
         List<Notification> notis = NotiMapper.toEntity(req);
 
         if (notis.isEmpty()) {
