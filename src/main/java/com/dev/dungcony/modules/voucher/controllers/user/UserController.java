@@ -18,7 +18,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/v1/api/user/vouchers")
-@Tag(name = "Voucher")
+@Tag(name = "Vouchers")
 public class UserController {
 
     private final UserVoucherGetService userVoucherGetService;

@@ -8,4 +8,6 @@ public interface ProductUpdateService {
     void increaseSold(String code, int quantity);
 
     ProductDetailRes update(String productCode, ProductUpdateReq req);
+
+    ProductDetailRes updateImage(String productCode, String imageUrl);
 }

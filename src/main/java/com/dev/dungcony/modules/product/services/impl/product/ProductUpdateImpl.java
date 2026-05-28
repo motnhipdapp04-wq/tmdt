@@ -66,4 +66,18 @@ public class ProductUpdateImpl implements ProductUpdateService {
 
         return ProductMapper.toDetailRes(product);
     }
+
+    @Transactional
+    @Override
+    public ProductDetailRes updateImage(String productCode, String imageUrl) {
+        Product product = productRepository.findByCode(productCode)
+                .orElseThrow(ProductNotFoundException::new);
+
+        if (product.getStatus() == ProductStatus.DELETED)
+            throw new ProductConflictException("product is deleted");
+
+        product.setImg(imageUrl);
+
+        return ProductMapper.toDetailRes(product);
+    }
 }

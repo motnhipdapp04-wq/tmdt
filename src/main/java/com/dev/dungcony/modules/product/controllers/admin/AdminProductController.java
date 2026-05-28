@@ -6,11 +6,15 @@ import com.dev.dungcony.modules.product.dtos.req.*;
 import com.dev.dungcony.modules.product.services.interfaces.product.ProductAddService;
 import com.dev.dungcony.modules.product.services.interfaces.product.ProductDeleteService;
 import com.dev.dungcony.modules.product.services.interfaces.product.ProductUpdateService;
+import com.dev.dungcony.modules.upload.dtos.res.ImageUploadRes;
+import com.dev.dungcony.modules.upload.services.interfaces.ImageUploadService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @Slf4j
@@ -22,6 +26,7 @@ public class AdminProductController {
     private final ProductAddService productAddService;
     private final ProductUpdateService productUpdateService;
     private final ProductDeleteService productDeleteService;
+    private final ImageUploadService imageUploadService;
 
     @PostMapping("/add-new")
     public ResponseEntity<ApiRes<?>> addNew(
@@ -37,6 +42,17 @@ public class AdminProductController {
             @RequestBody ProductUpdateReq req) {
         return ResponseEntity.ok()
                 .body(ApiRes.success("Update product successfully", productUpdateService.update(productCode, req)));
+    }
+
+    @PutMapping(value = "/{productCode}/image", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<ApiRes<?>> updateImage(
+            @PathVariable String productCode,
+            @RequestPart("file") MultipartFile file) {
+        ImageUploadRes uploadedImage = imageUploadService.uploadProductImage(productCode, file);
+        return ResponseEntity.ok()
+                .body(ApiRes.success(
+                        "Update product image successfully",
+                        productUpdateService.updateImage(productCode, uploadedImage.imageUrl())));
     }
 
     @DeleteMapping("/delete/{code}")

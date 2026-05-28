@@ -5,7 +5,7 @@ services:
     image: postgres:17-alpine
     restart: unless-stopped
     environment:
-      POSTGRES_DB: tmdt1
+      POSTGRES_DB: tmdt
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: "123456"
     ports:
@@ -14,7 +14,7 @@ services:
       - local_db_data:/var/lib/postgresql/data
       - ./db-dumps/dump.sql:/docker-entrypoint-initdb.d/00-dump.sql:ro
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U postgres -d tmdt1" ]
+      test: [ "CMD-SHELL", "pg_isready -U postgres -d tmdt" ]
       interval: 10s
       timeout: 5s
       retries: 20
@@ -44,7 +44,7 @@ services:
       PORT: 8080
       SPRING_PROFILES_ACTIVE: dev
 
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/tmdt1
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/tmdt
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: "123456"
 
